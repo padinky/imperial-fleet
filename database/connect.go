@@ -30,7 +30,7 @@ func ConnectDB() {
 
 	log.Println("✅ successfully connected to database!")
 
-	err = DB.AutoMigrate(&model.Spaceship{}, &model.Armament{})
+	err = DB.AutoMigrate(&model.Spaceship{}, &model.Armament{}, &model.User{}, &model.Session{})
 	if err != nil {
 		log.Fatal(err)
 	}

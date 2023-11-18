@@ -3,9 +3,11 @@ module github.com/padinky/imperial-fleet
 go 1.21.3
 
 require (
+	github.com/badoux/checkmail v1.2.1
 	github.com/gofiber/fiber/v2 v2.51.0
 	github.com/google/uuid v1.4.0
 	github.com/joho/godotenv v1.5.1
+	golang.org/x/crypto v0.7.0
 	gorm.io/driver/mysql v1.5.2
 	gorm.io/gorm v1.25.5
 )

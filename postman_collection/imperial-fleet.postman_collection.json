@@ -7,130 +7,231 @@
 	},
 	"item": [
 		{
-			"name": "create",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\" : \"spaceship 10\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 4\",\n            \"qty\" : \"19\"\n        },\n        {\n            \"title\" : \"armaments 5\",\n            \"qty\" : \"29\"\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "spaceship",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"spaceship 10\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 4\",\n            \"qty\" : \"19\"\n        },\n        {\n            \"title\" : \"armaments 5\",\n            \"qty\" : \"29\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/spaceship",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"spaceship"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/spaceship",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"spaceship"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get By ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/spaceship/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"spaceship",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/spaceship",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"spaceship"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\" : \"spaceship 111\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 10434300\",\n            \"qty\" : \"192\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"2934\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"23423\"\n        }\n    ]\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Get By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/spaceship/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"spaceship",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/spaceship/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"spaceship",
-						"1"
-					]
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/spaceship",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"spaceship"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"spaceship 111\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 10434300\",\n            \"qty\" : \"192\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"2934\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"23423\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/spaceship/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"spaceship",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/spaceship/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"spaceship",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Delete",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/spaceship/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"spaceship",
-						"1"
-					]
+			"name": "users",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"ekyp\",\n    \"password\" : \"rahasiabanget\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
