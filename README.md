@@ -7,7 +7,7 @@ This is very simple version for fleet management. Written in Golang and MySQL fo
 2. [Gorm](https://gorm.io/): ORM library for Golang
 
 # How To Run
-Simply clone this repository, then choose either you want to run it using docker-compose or manual (unfortunatelly the docker-compose version is still buggy) : *UPDATE: it's fixed!*
+Simply clone this repository, then choose either you want to run it using docker-compose or manual (unfortunatelly the docker-compose version is still buggy) : **UPDATE: it's fixed!**
 
 ### 1.Using docker-compose
 Simply just run this code from the project root directory
