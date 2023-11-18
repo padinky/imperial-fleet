@@ -13,23 +13,22 @@ services:
     volumes:
       - db:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
-  # backend:
-  #   build:
-  #     context: .
-  #     dockerfile: ./Dockerfile
-  #   environment:
-  #     - SERVICE_PORT=3000
-  #     - DB_HOST=mysql
-  #     - DB_PORT=3306
-  #     - DB_USERNAME=root
-  #     - DB_PASSWORD=supers3cr3t
-  #     - DB_NAME=imperial-fleet
-  #   ports:
-  #     - 3000:3000
-  #   depends_on:
-  #     - mysql
-  #   links: 
-  #     - mysql:mysql
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    environment:
+      - SERVICE_PORT=3000
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_PASSWORD=supers3cr3t
+      - DB_NAME=imperial-fleet
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
 
 volumes:
   db:
