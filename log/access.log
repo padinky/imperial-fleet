@@ -1,0 +1,736 @@
+06:32:15 	| 200 	|      27.542µs 	| GET 	| / 	|  	| Hello, World!
+06:32:15 	| 404 	|      149.25µs 	| GET 	| /favicon.ico 	|  	| {"code":404,"message":"404: Not Found"}
+07:20:37 	| 400 	|     180.208µs 	| POST 	| /api/v1/spaceship 	|  	| {"code":400,"message":"invalid json"}
+07:23:38 	| 400 	|     390.916µs 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 1",
+    "class" : "some class",
+    "crew" : "some crew",
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 2",
+            "qty" : "29"
+        }
+    ]
+} 	| {"code":400,"message":"invalid json"}
+07:24:24 	| 400 	|     326.292µs 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 1",
+    "class" : "some class",
+    "crew" : "some crew",
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 2",
+            "qty" : "29"
+        }
+    ]
+} 	| {"code":400,"message":"json: cannot unmarshal string into Go struct field Spaceship.crew of type int16"}
+07:24:36 	| 200 	|    13.52025ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 1",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 2",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+07:25:27 	| 200 	|      30.725ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 2",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 2",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+07:38:09 	| 200 	|    2.202083ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":null}
+07:38:16 	| 404 	|      2.5785ms 	| GET 	| /api/v1/spaceship/3 	|  	| {"code":404,"message":"data not found"}
+07:38:20 	| 200 	|    1.827458ms 	| GET 	| /api/v1/spaceship/2 	|  	| {"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":null}
+07:43:23 	| 200 	|    4.927167ms 	| GET 	| /api/v1/spaceship/2 	|  	| {"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]}
+07:54:11 	| 200 	|      2.2745ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]}]
+07:54:53 	| 200 	|    2.029084ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]}]
+07:58:31 	| 200 	|      2.7685ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"title":"armaments 1","qty":"19"},{"ID":2,"title":"armaments 2","qty":"29"}]},{"ID":2,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"title":"armaments 1","qty":"19"},{"ID":4,"title":"armaments 2","qty":"29"}]}]
+07:59:41 	| 200 	|    1.743958ms 	| GET 	| /api/v1/spaceship 	|  	| [{"id":1,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"id":2,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]}]
+08:00:20 	| 200 	|    3.977583ms 	| GET 	| /api/v1/spaceship 	|  	| [{"id":1,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"id":2,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]}]
+08:00:34 	| 200 	|    9.218584ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 3",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 2",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:00:37 	| 200 	|     2.79425ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"id":1,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]}
+08:00:40 	| 200 	|    4.195125ms 	| GET 	| /api/v1/spaceship/3 	|  	| {"id":3,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":[]}
+08:00:49 	| 200 	|    2.928125ms 	| GET 	| /api/v1/spaceship/3 	|  	| {"id":3,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":[]}
+08:00:52 	| 200 	|    2.068209ms 	| GET 	| /api/v1/spaceship 	|  	| [{"id":1,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"id":2,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"id":3,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":null}]
+08:01:52 	| 200 	|   11.575625ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 3",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 4",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 5",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:03:33 	| 200 	|    7.866458ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 5",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 4",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 5",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:03:36 	| 200 	|    2.048791ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"title":"armaments 1","qty":"19"},{"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armament":null}]
+08:03:58 	| 200 	|    8.750208ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 5",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 4",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 5",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:04:00 	| 200 	|    1.931292ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armament":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armament":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armament":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armament":null}]
+08:04:14 	| 200 	|    5.481542ms 	| GET 	| /api/v1/spaceship/6 	|  	| {"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armament":[]}
+08:05:05 	| 200 	|    3.387417ms 	| GET 	| /api/v1/spaceship/6 	|  	| {"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":[]}
+08:05:06 	| 200 	|    5.922292ms 	| GET 	| /api/v1/spaceship/6 	|  	| {"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":[]}
+08:05:12 	| 200 	|    2.005334ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null}]
+08:05:25 	| 200 	|      10.237ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 10",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 4",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 5",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:05:29 	| 200 	|    2.196125ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":7,"CreatedAt":"2023-11-18T08:05:25.658+07:00","UpdatedAt":"2023-11-18T08:05:25.658+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":5,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":6,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]}]
+08:05:42 	| 200 	|   10.688708ms 	| POST 	| /api/v1/spaceship 	| {
+    "name" : "spaceship 10",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 4",
+            "qty" : "19"
+        },
+        {
+            "title" : "armaments 5",
+            "qty" : "29"
+        }
+    ]
+} 	| {"success":true}
+08:05:44 	| 200 	|     2.14825ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":7,"CreatedAt":"2023-11-18T08:05:25.658+07:00","UpdatedAt":"2023-11-18T08:05:25.658+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":5,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":6,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.247+07:00","UpdatedAt":"2023-11-18T08:05:42.247+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":7,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]}]
+08:19:34 	| 200 	|    3.673458ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T07:24:36.367+07:00","DeletedAt":null,"name":"spaceship 1","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":7,"CreatedAt":"2023-11-18T08:05:25.658+07:00","UpdatedAt":"2023-11-18T08:05:25.658+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":5,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":6,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.247+07:00","UpdatedAt":"2023-11-18T08:05:42.247+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":7,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]}]
+08:20:10 	| 200 	|    11.80225ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"success":true}
+08:20:17 	| 200 	|    3.271041ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:20:10.567+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"},{"ID":9,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":10,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"}]}
+08:23:04 	| 200 	|     7.41725ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"success":true}
+08:23:07 	| 200 	|    3.009959ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:23:04.814+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"},{"ID":9,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":10,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"}]}
+08:23:42 	| 200 	|    5.971291ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"success":true}
+08:23:46 	| 200 	|    5.773083ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:23:42.524+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T07:24:36.371+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"},{"ID":9,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":10,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"}]}
+08:31:48 	| 200 	|   27.621375ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"success":true}
+08:31:52 	| 200 	|    4.811084ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:31:48.93+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":1,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T08:31:48.941+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":2,"CreatedAt":"2023-11-18T07:24:36.371+07:00","UpdatedAt":"2023-11-18T08:31:48.948+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"},{"ID":9,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":10,"CreatedAt":"2023-11-18T08:20:10.57+07:00","UpdatedAt":"2023-11-18T08:20:10.57+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"}]}
+08:35:29 	| 500 	|   32.909167ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '9' for key 'spaceships.PRIMARY'"}
+08:36:53 	| 500 	|   16.066667ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '10' for key 'spaceships.PRIMARY'"}
+08:36:55 	| 500 	|   24.208209ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '11' for key 'spaceships.PRIMARY'"}
+08:36:55 	| 500 	|   20.790458ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '12' for key 'spaceships.PRIMARY'"}
+08:36:56 	| 500 	|   22.255875ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '13' for key 'spaceships.PRIMARY'"}
+08:36:56 	| 500 	|   31.654666ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '14' for key 'spaceships.PRIMARY'"}
+08:36:57 	| 500 	|   22.970875ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '15' for key 'spaceships.PRIMARY'"}
+08:36:57 	| 500 	|   25.352125ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '16' for key 'spaceships.PRIMARY'"}
+08:36:58 	| 500 	|   22.022458ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '17' for key 'spaceships.PRIMARY'"}
+08:36:58 	| 500 	|   22.321542ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '18' for key 'spaceships.PRIMARY'"}
+08:36:58 	| 500 	|   23.275042ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '19' for key 'spaceships.PRIMARY'"}
+08:36:59 	| 500 	|   24.782583ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '20' for key 'spaceships.PRIMARY'"}
+08:36:59 	| 500 	|   24.697875ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '21' for key 'spaceships.PRIMARY'"}
+08:36:59 	| 500 	|   23.872084ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '22' for key 'spaceships.PRIMARY'"}
+08:37:00 	| 500 	|   24.352792ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '23' for key 'spaceships.PRIMARY'"}
+08:37:00 	| 500 	|   22.714875ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '24' for key 'spaceships.PRIMARY'"}
+08:37:00 	| 500 	|   17.104334ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '25' for key 'spaceships.PRIMARY'"}
+08:37:01 	| 500 	|   23.031541ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '26' for key 'spaceships.PRIMARY'"}
+08:37:01 	| 500 	|   22.634083ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '27' for key 'spaceships.PRIMARY'"}
+08:37:02 	| 500 	|   23.476209ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '28' for key 'spaceships.PRIMARY'"}
+08:37:02 	| 500 	|   23.271625ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '29' for key 'spaceships.PRIMARY'"}
+08:37:28 	| 500 	|     32.2315ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"code":500,"message":"Error 1062 (23000): Duplicate entry '30' for key 'spaceships.PRIMARY'"}
+08:38:16 	| 200 	|   26.061333ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "ID" : 1,
+            "title" : "armaments 1000",
+            "qty" : "192"
+        },
+        {
+            "ID" : 2,
+            "title" : "armaments 512312",
+            "qty" : "2934"
+        }
+    ]
+} 	| {"success":true}
+08:38:25 	| 200 	|      3.0175ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:38:16.462+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":11,"CreatedAt":"2023-11-18T08:38:16.471+07:00","UpdatedAt":"2023-11-18T08:38:16.471+07:00","DeletedAt":null,"title":"armaments 1000","qty":"192"},{"ID":12,"CreatedAt":"2023-11-18T08:38:16.48+07:00","UpdatedAt":"2023-11-18T08:38:16.48+07:00","DeletedAt":null,"title":"armaments 512312","qty":"2934"}]}
+08:38:51 	| 200 	|   37.978583ms 	| PUT 	| /api/v1/spaceship/1 	| {
+    "name" : "spaceship 111",
+    "class" : "some class",
+    "crew" : 20,
+    "image" : "the image",
+    "status" : "status",
+    "armaments" : [
+        {
+            "title" : "armaments 10434300",
+            "qty" : "192"
+        },
+        {
+            "title" : "armaments 55345412312",
+            "qty" : "2934"
+        },
+        {
+            "title" : "armaments 55345412312",
+            "qty" : "23423"
+        }
+    ]
+} 	| {"success":true}
+08:38:55 	| 200 	|    3.539792ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"ID":1,"CreatedAt":"2023-11-18T07:24:36.367+07:00","UpdatedAt":"2023-11-18T08:38:51.49+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":13,"CreatedAt":"2023-11-18T08:38:51.506+07:00","UpdatedAt":"2023-11-18T08:38:51.506+07:00","DeletedAt":null,"title":"armaments 10434300","qty":"192"},{"ID":14,"CreatedAt":"2023-11-18T08:38:51.514+07:00","UpdatedAt":"2023-11-18T08:38:51.514+07:00","DeletedAt":null,"title":"armaments 55345412312","qty":"2934"},{"ID":15,"CreatedAt":"2023-11-18T08:38:51.52+07:00","UpdatedAt":"2023-11-18T08:38:51.52+07:00","DeletedAt":null,"title":"armaments 55345412312","qty":"23423"}]}
+08:45:09 	| 200 	|    10.33025ms 	| DELETE 	| /api/v1/spaceship/1 	|  	| {"success":true}
+08:45:14 	| 404 	|    4.804083ms 	| GET 	| /api/v1/spaceship/1 	|  	| {"code":404,"message":"data not found"}
+08:45:19 	| 200 	|    2.328209ms 	| GET 	| /api/v1/spaceship 	|  	| [{"ID":2,"CreatedAt":"2023-11-18T07:25:28.287+07:00","UpdatedAt":"2023-11-18T07:25:28.287+07:00","DeletedAt":null,"name":"spaceship 2","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":3,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 1","qty":"19"},{"ID":4,"CreatedAt":"2023-11-18T07:25:28.3+07:00","UpdatedAt":"2023-11-18T07:25:28.3+07:00","DeletedAt":null,"title":"armaments 2","qty":"29"}]},{"ID":3,"CreatedAt":"2023-11-18T08:00:34.477+07:00","UpdatedAt":"2023-11-18T08:00:34.477+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":4,"CreatedAt":"2023-11-18T08:01:52.546+07:00","UpdatedAt":"2023-11-18T08:01:52.546+07:00","DeletedAt":null,"name":"spaceship 3","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":5,"CreatedAt":"2023-11-18T08:03:33.084+07:00","UpdatedAt":"2023-11-18T08:03:33.084+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":6,"CreatedAt":"2023-11-18T08:03:58.838+07:00","UpdatedAt":"2023-11-18T08:03:58.838+07:00","DeletedAt":null,"name":"spaceship 5","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":7,"CreatedAt":"2023-11-18T08:05:25.658+07:00","UpdatedAt":"2023-11-18T08:05:25.658+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":5,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":6,"CreatedAt":"2023-11-18T08:05:25.659+07:00","UpdatedAt":"2023-11-18T08:05:25.659+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.247+07:00","UpdatedAt":"2023-11-18T08:05:42.247+07:00","DeletedAt":null,"name":"spaceship 10","class":"some class","crew":20,"image":"the image","status":"status","armaments":[{"ID":7,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 4","qty":"19"},{"ID":8,"CreatedAt":"2023-11-18T08:05:42.25+07:00","UpdatedAt":"2023-11-18T08:05:42.25+07:00","DeletedAt":null,"title":"armaments 5","qty":"29"}]},{"ID":9,"CreatedAt":"2023-11-18T08:35:29.122+07:00","UpdatedAt":"2023-11-18T08:35:29.122+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":10,"CreatedAt":"2023-11-18T08:36:54.356+07:00","UpdatedAt":"2023-11-18T08:36:54.356+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":11,"CreatedAt":"2023-11-18T08:36:55.802+07:00","UpdatedAt":"2023-11-18T08:36:55.802+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":12,"CreatedAt":"2023-11-18T08:36:56.402+07:00","UpdatedAt":"2023-11-18T08:36:56.402+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":13,"CreatedAt":"2023-11-18T08:36:56.965+07:00","UpdatedAt":"2023-11-18T08:36:56.965+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":14,"CreatedAt":"2023-11-18T08:36:57.382+07:00","UpdatedAt":"2023-11-18T08:36:57.382+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":15,"CreatedAt":"2023-11-18T08:36:57.798+07:00","UpdatedAt":"2023-11-18T08:36:57.798+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":16,"CreatedAt":"2023-11-18T08:36:58.221+07:00","UpdatedAt":"2023-11-18T08:36:58.221+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":17,"CreatedAt":"2023-11-18T08:36:58.582+07:00","UpdatedAt":"2023-11-18T08:36:58.582+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":18,"CreatedAt":"2023-11-18T08:36:58.997+07:00","UpdatedAt":"2023-11-18T08:36:58.997+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":19,"CreatedAt":"2023-11-18T08:36:59.309+07:00","UpdatedAt":"2023-11-18T08:36:59.309+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":20,"CreatedAt":"2023-11-18T08:36:59.644+07:00","UpdatedAt":"2023-11-18T08:36:59.644+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":21,"CreatedAt":"2023-11-18T08:37:00.027+07:00","UpdatedAt":"2023-11-18T08:37:00.027+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":22,"CreatedAt":"2023-11-18T08:37:00.371+07:00","UpdatedAt":"2023-11-18T08:37:00.371+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":23,"CreatedAt":"2023-11-18T08:37:00.677+07:00","UpdatedAt":"2023-11-18T08:37:00.677+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":24,"CreatedAt":"2023-11-18T08:37:01.089+07:00","UpdatedAt":"2023-11-18T08:37:01.089+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":25,"CreatedAt":"2023-11-18T08:37:01.473+07:00","UpdatedAt":"2023-11-18T08:37:01.473+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":26,"CreatedAt":"2023-11-18T08:37:01.883+07:00","UpdatedAt":"2023-11-18T08:37:01.883+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":27,"CreatedAt":"2023-11-18T08:37:02.26+07:00","UpdatedAt":"2023-11-18T08:37:02.26+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":28,"CreatedAt":"2023-11-18T08:37:02.628+07:00","UpdatedAt":"2023-11-18T08:37:02.628+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":29,"CreatedAt":"2023-11-18T08:37:03.031+07:00","UpdatedAt":"2023-11-18T08:37:03.031+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null},{"ID":30,"CreatedAt":"2023-11-18T08:37:28.957+07:00","UpdatedAt":"2023-11-18T08:37:28.957+07:00","DeletedAt":null,"name":"spaceship 111","class":"some class","crew":20,"image":"the image","status":"status","armaments":null}]

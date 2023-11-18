@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=imperial-fleet
+      - MYSQL_ROOT_PASSWORD=supers3cr3t
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      - SERVICE_PORT=3000
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=root
+      - DB_PASSWORD=supers3cr3t
+      - DB_NAME=imperial-fleet
+    ports:
+      - 3000:3000
+    depends_on:
+      - mysql
+    links: 
+      - mysql:mysql
+
+volumes:
+  db:
+    driver: local

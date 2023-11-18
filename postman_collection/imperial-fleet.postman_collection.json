@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "92fbddd1-1889-4c6f-b2bb-eef44bad7301",
+		"name": "imperial-fleet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2202995"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"spaceship 10\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 4\",\n            \"qty\" : \"19\"\n        },\n        {\n            \"title\" : \"armaments 5\",\n            \"qty\" : \"29\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spaceship",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spaceship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spaceship/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spaceship",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spaceship",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spaceship"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"spaceship 111\",\n    \"class\" : \"some class\",\n    \"crew\" : 20,\n    \"image\" : \"the image\",\n    \"status\" : \"status\",\n    \"armaments\" : [\n        {\n            \"title\" : \"armaments 10434300\",\n            \"qty\" : \"192\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"2934\"\n        },\n        {\n            \"title\" : \"armaments 55345412312\",\n            \"qty\" : \"23423\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spaceship/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spaceship",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/spaceship/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"spaceship",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
